@@ -678,6 +678,19 @@ function matrix(n) {
   return results
 }
 
-console.log(matrix(2));
-console.log(matrix(3));
-console.log(matrix(4));
+// console.log(matrix(2));
+// console.log(matrix(3));
+// console.log(matrix(4));
+
+function arrayDiff(arr, num) {
+  let result = []
+  for (index of arr) {
+    if (!num.includes(index)) {
+      console.log(true);
+      result.push(index)
+    }
+  }
+  return result
+}
+
+console.log(arrayDiff([1,2,2,2,3],[2, 3]));
