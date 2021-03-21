@@ -693,4 +693,87 @@ function arrayDiff(arr, num) {
   return result
 }
 
-console.log(arrayDiff([1,2,2,2,3],[2, 3]));
+// console.log(arrayDiff([1,2,2,2,3],[2, 3]));
+
+function hero(bullets, dragons){
+  
+  if ((bullets / 2) >= dragons) {
+    return true
+  }
+  return false
+  }
+
+  // console.log(hero(10, 5));
+  // console.log(hero(7, 4));
+
+  // extract the name form a url
+  function domainName(url){
+    if (url.includes('www')) {
+  const name = url.split('www.')
+  const result = name[1].split('.')
+    return result[0];
+    } else if (url.includes('//')) {
+      const name = url.split('//')
+      const result = name[1].split('.')
+        return result[0];
+    } else {
+      const result = url.split('.')
+      return result[0]
+    }
+  }
+  // console.log(domainName("http://google.com"))
+  // console.log(domainName("http://google.co.jp"));
+  // console.log(domainName("www.xakep.ru"));
+
+  function solution(number){
+  let result = 0;
+  for (let i = 1; i < number; i++) {
+    if (i % 5 === 0 || i % 3 === 0) {
+      result += i
+      }
+    }
+    return result
+  }
+  // console.log(solution(10));
+
+
+  function toCamelCase(str){
+    let result = [];
+
+    if (str == '') {
+      return str
+    } else {
+      const split = str.split('_')
+    for (letter in split) {
+    console.log(split[letter][0].toUpperCase() + split[letter].substr(1));
+    result.push(split[letter][0].toUpperCase() + split[letter].substr(1))
+      }
+    }
+
+  return result.join('');
+  }
+
+  // console.log(toCamelCase("the_stealth_warrior"));
+
+
+  var moveZeros = function (arr) {
+    let count = 0;
+    let result  = []
+
+    arr.forEach((num, i) => {
+      if (num === 0) {
+        count++
+      } else {
+        result.push(num)
+      }
+    })
+  
+    for (let i  = 0; i < count; i++) {
+      result.push(0)
+    }
+    return result
+  }
+  console.log(moveZeros([1,0,0,1]));
+
+  console.log(moveZeros([1,2,0,1,0,1,0,3,0,1]));
+  console.log(moveZeros([ 9, 0, 0, 9, 1, 2, 0, 1, 0, 1, 0, 3, 0, 1, 9, 0, 0, 0, 0, 9 ]));
